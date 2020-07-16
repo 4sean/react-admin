@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { HashRouter,Switch,Route } from 'react-router-dom';
-import Home from './views/Home'
-import About from './views/About'
-import {Button} from 'antd'
+import { BrowserRouter,Switch,Route} from 'react-router-dom';
+import Login from './views/login/Index'
 
-import './App.scss'
 
 class App extends Component {
   constructor(props) {
@@ -13,17 +10,12 @@ class App extends Component {
   }
   render() { 
     return ( 
-      <HashRouter>
-        <div className='test'>ceshi</div>
+      <BrowserRouter>
         <Switch>
-          <Route exact  component={Home} path="/">Home</Route>
-          <Route component={About} path="/about">About</Route>
+          <Route exact  component={Login} path="/"></Route>
         </Switch>
-        <ul>
-          <li>ceshi</li>
-        </ul>
-        <Button type="primary">ceshi </Button>
-      </HashRouter>
+       
+      </BrowserRouter>
      );
   }
 }
