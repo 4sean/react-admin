@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //创建实例
 const instance = axios.create({
-  baseURL: 'devApi',
+  baseURL: process.env.REACT_APP_API,
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' }
 })
@@ -46,5 +46,17 @@ instance.interceptors.response.use(
     return Promise.reject(error.response.status) // 返回接口返回的错误信息
   }
 )
+
+instance.get = (url, params) => instance.request({
+  url,
+  method: 'GET',
+  params
+});
+instance.post = (url, data) => instance.request({
+  url,
+  method: 'post',
+  data,
+
+});
 
 export default instance

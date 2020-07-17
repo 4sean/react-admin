@@ -51,7 +51,7 @@ class LoginForm extends Component {
             </Form.Item>
             <Form.Item name="code" rules={[
               {required:true,message:'验证码不能为空'},
-              { min: 6, message: '不能少于6位' },
+              { min: 3, message: '不能少于6位' },
               { pattern: validate_pw, message: '只数字' }
             ]}>
               <Row gutter={13}>
