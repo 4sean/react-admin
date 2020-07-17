@@ -1,0 +1,1 @@
+export const validate_pw = /^[0-9]/;
